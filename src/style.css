@@ -151,15 +151,9 @@ h2 {
   border-width: 30px;
 }
 .repository {
-  margin-left: 100px;
+  margin-left: 300px;
 }
 
-.donut-chart {
-  position: relative;
-  width: 165px;
-  height: 165px;
-  margin: 0 0px 0 -10px;
-}
 
 .portion-block {
   border-radius: 50%;
