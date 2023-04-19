@@ -24,8 +24,6 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
-
-
 function displayWeatherData(response) {
   let cityName = response.data.city;
 
