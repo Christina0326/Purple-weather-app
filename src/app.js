@@ -45,7 +45,7 @@ function displayWeatherData(response) {
   dateTime.innerHTML = formatDate(response.data.time * 1000);
   weatherIcon.src = response.data.condition.icon_url;
 
-  getForecast(response.data.coord);
+  getForecast(response.data.coordinates);
 }
 
 function getForecast(coordinates) {
@@ -98,39 +98,6 @@ const url = `https://api.unsplash.com/photos/random?query=${query}&client_id=${u
 }
 getPhoto("Lisbon");
 
-function displayFahrenheit(event) {
-  event.preventDefault();
-
-  celsiuslink.classList.remove("active");
-  fahrenheitlink.classList.add("active");
-
-  let fahrenheit = (temperaturecelsius * 9) / 5 + 32;
-  let temperatureDisplay = document.querySelector("h1");
-  temperatureDisplay.innerHTML = Math.round(fahrenheit);
-}
-
-let temperaturecelsius = null;
-
-let fahrenheitlink = document.querySelector(".temperaturefahrenheit");
-fahrenheitlink.addEventListener("click", function (event) {
-  console.log("Fahrenheit link clicked");
-  displayFahrenheit(event);
-});
-
-function displayCelsius(event) {
-  event.preventDefault();
-  celsiuslink.classList.add("active");
-  fahrenheitlink.classList.remove("active");
-  let temperatureDisplay = document.querySelector("h1");
-  temperatureDisplay.innerHTML = `${temperaturecelsius}`;
-}
-
-let celsiuslink = document.querySelector(".temperaturecelsius");
-celsiuslink.addEventListener("click", function (event) {
-  console.log("Celsius link clicked");
-  displayCelsius(event);
-});
-
 function displayForecast(response) {
   let forecast = response.data.daily;
 
@@ -169,11 +136,4 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function getForecast(city) {
-  let apiKey = "ef8052b94656b6atac9cfoe91360155a";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(displayForecast);
-}
-getForecast("Lisbon");
-
+getWeatherData("Lisbon");

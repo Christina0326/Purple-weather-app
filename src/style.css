@@ -14,16 +14,10 @@ h2 {
   margin-top: -32px;
   font-size: 20px;
 }
-
-
 .temperaturecelsius {
   text-decoration: none;
   margin-left: 5%;
-}
-
-.temperaturefahrenheit {
-  text-decoration: none;
-  margin-left: -5%;
+  color: #2d033b;
 }
 
 .btn {
@@ -106,13 +100,14 @@ h2 {
   justify-content: center;
   align-items: center;
   display: flex;
-  margin-bottom: 20%;
+  margin-bottom: 10%;
 }
 
 .today-weather .weather-icon {
   width: 120px;
   height: 120px;
   z-index: 1;
+
 }
 
 .label {
@@ -162,14 +157,7 @@ h2 {
   position: absolute;
   width: 100%;
 }
-.circle {
-  border-radius: 50%;
-  clip: rect(0px, 100px, 200px, 0px);
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  font-size: 1.5rem;
-}
+
 
 .weather-forecast {
   margin-top: 20px;
@@ -189,3 +177,4 @@ h2 {
 .weather-forecast-temperatures {
   font-size: 13px;
 }
+
